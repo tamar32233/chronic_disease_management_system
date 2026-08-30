@@ -1,0 +1,39 @@
+Chronic Disease System - Statistical Report
+1. Diagnosis Statistics:
+             blood_glucose                          bmi         ... blood_pressure_systolic            blood_pressure_diastolic                 
+                      mean median        std       mean median  ...                  median        std                     mean median       std
+diagnosis                                                       ...                                                                             
+Diabetes        195.179724  194.3  31.734717  32.083858   32.1  ...                   137.0  10.295513                87.033465   87.0  4.302693
+HeartDisease    120.232284  119.7  17.274623  27.560508   27.6  ...                   130.0  11.301506                82.605076   83.0  7.402714
+Hypertension    105.908008  106.9  14.362214  29.631431   29.8  ...                   166.0  12.939960               101.951952  102.0  7.485035
+
+[3 rows x 12 columns]
+
+2. Age Group Analysis
+          risk_score                         bmi                  blood_glucose                    medication_count                 
+                mean median       std       mean median       std          mean  median        std             mean median       std
+age_group                                                                                                                           
+0-40       38.169560  37.20  9.402838  29.796264   29.8  3.708538    141.676703  126.10  46.379803         3.720879    4.0  1.608251
+41-60      41.037306  40.00  9.026832  29.648987   29.6  3.775628    140.438498  127.30  44.795404         3.743743    4.0  1.606930
+61-80      43.390162  41.85  9.245994  29.802894   29.7  3.660301    140.250347  125.95  45.541814         3.531250    3.0  1.589784
+81+        46.854264  45.80  9.471378  29.990439   30.3  3.838371    141.094315  125.70  43.522933         3.764858    4.0  1.618867
+
+3. Risk Factor Correlation
+                               age       bmi  blood_glucose  blood_pressure_systolic  blood_pressure_diastolic  medication_count  risk_score
+age                       1.000000  0.017992      -0.008763                 0.004656                  0.012339         -0.025267    0.306387
+bmi                       0.017992  1.000000       0.356813                 0.061981                  0.056001         -0.180120    0.071976
+blood_glucose            -0.008763  0.356813       1.000000                -0.333196                 -0.300344          0.033575    0.101031
+blood_pressure_systolic   0.004656  0.061981      -0.333196                 1.000000                  0.634976         -0.457565   -0.304971
+blood_pressure_diastolic  0.012339  0.056001      -0.300344                 0.634976                  1.000000         -0.457954   -0.312889
+medication_count         -0.025267 -0.180120       0.033575                -0.457565                 -0.457954          1.000000    0.635801
+risk_score                0.306387  0.071976       0.101031                -0.304971                 -0.312889          0.635801    1.000000
+
+4. Medication Burden Analysis
+                  medication_count  risk_score
+medication_count          1.000000    0.635801
+risk_score                0.635801    1.000000
+
+5. Time Since Diagnosis Analysis
+                       years_since_diagnosis  risk_score
+years_since_diagnosis                1.00000     0.02445
+risk_score                           0.02445     1.00000

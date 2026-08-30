@@ -1,0 +1,43 @@
+Docker command used to run RabbitMQ:
+
+docker run -d --name chronic-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+Ports:
+5672 - used by the Python code to connect to RabbitMQ
+15672 - used to open the RabbitMQ website in the browser
+
+
+to run statistics.py via terminal: python -m src.analysis.statistics
+to run visualizations via terminal: python -m src.analysis.visualizations
+to run the producer via terminal: python producer.py
+
+
+**Important note:**
+If you run the system through PyCharm instead of the terminal,
+make sure the working directory of statistics.py and visualizations.py is set to:
+main project folder (the folder that contains src, reports, and data).
+(for example in my pc:  C:\Users\User\PycharmProjects\chronic_disease_system)
+
+
+Example URLs for sending tasks:
+
+Statistics:
+http://127.0.0.1:5000/statistics/risk_factor_correlation
+http://127.0.0.1:5000/statistics/generate_full_report
+
+Visualizations:
+http://127.0.0.1:5000/visualizations/plot_bmi_vs_glucose
+http://127.0.0.1:5000/visualizations/generate_dashboard
+
+
+
+
+
+
+
+
+
+
+
+
+
